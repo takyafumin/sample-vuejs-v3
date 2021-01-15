@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web:
+    build: ./docker/web
+    image: vue3
+    container_name: vue3-web
+    ports:
+      - "8080:8080"
+    privileged: true
+    volumes:
+      - ".:/app"
+    tty: true
+    stdin_open: true
+    command: /bin/sh
